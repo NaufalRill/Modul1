@@ -4,37 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JumpStart - Grow Your Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
-
-    <h1>JADWAL KULIAH</h1>
-    <table>
-        <tr>
-            <th>Senin</th>
-            <th>Selasa</th>
-            <th>Rabu</th>
-        </tr>
-        <tr>
-            <td class="lightblue">Pemrograman Web</td>
-            <td class="black">Jaringan Komputer</td>
-            <td class="pink">Piranti Cerdas</td>
-        </tr>
-        <tr>
-            <td class="lightblue">Pemrograman Fungsional</td>
-            <td class="black">Sistem Operasi</td>
-            <td class="pink">Komunikasi Data</td>
-        </tr>
-        <tr>
-            <td class="lightblue">Penulisan Ilmiah</td>
-            <td class="black">Interaksi Manusia Komputer</td>
-            <td class="pink">Kecerdasan Buatan</td>
-        </tr>
-    </table>
+    <header>
+        <nav class="navbar" data-aos="fade-left">
+            <a href="#" class="logo">
+                <img src="img/logo.png">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div data-aos="fade-down">
+                <h1>START YOUR <br>BUSINESS NOW</h1>
+            </div>
+            <div data-aos="fade-up">
+                <p>GROW YOUR STARTUP THROUGH OUR COACHING</p>
+            </div>
+        </div>
+    </header>
 
 
+    <main>
+
+        <div class="section section-1" id="services">
+            <div class="text" data-aos="fade-down">
+                <h2>Share your ideas with the world</h2>
+                <p>Turn your passion into reality. Our coaching services empower you to refine
+                    and present your ideas with confidence, connecting you with the right audience
+                    and helping your vision reach a global stage.</p>
+            </div>
+            <div class="image" data-aos="fade-down">
+                <img src="img/img1.jpg" alt="Attract future investors">
+            </div>
+        </div>
+
+        <div class="section section-2">
+            <div class="image" data-aos="fade-up">
+                <img src="img/img2.jpg" alt="Share your ideas with the world">
+            </div>
+            <div class="text" data-aos="fade-up">
+                <h2>Attract future investors</h2>
+                <p>Unlock your startup's potential. Gain the insights and strategies you need to appeal to investors,
+                    ensuring your business stands out and secures the funding it deserves.</p>
+            </div>
+        </div>
+
+        <section class="section-3">
+            <div class="container" data-aos="fade-right">
+                <h1>READY TO TAKE THINGS TO <br>THE NEXT LEVEL?</h1>
+                <a href="#" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <div class="section section-1" id="services">
+            <div class="text" data-aos="fade-down">
+                <h2>Share your ideas with the world</h2>
+                <p>Turn your passion into reality. Our coaching services empower you to refine
+                    and present your ideas with confidence, connecting you with the right audience
+                    and helping your vision reach a global stage.</p>
+            </div>
+            <div class="image" data-aos="fade-down">
+                <img src="img/img1.jpg" alt="Attract future investors">
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container" id="contact">
+            <div class="footer-left">
+                <img src="img/footer-logo.png" alt="JumpStart Logo" class="footer-logo">
+                <p>Get started to grow up your business <br>with personal online coaching</p>
+            </div>
+            <div class="footer-right">
+                <div class="contact-info">
+                    <p><i class="fa fa-phone"></i> 081250199962</p>
+                    <p><i class="fa fa-envelope"></i> jumpstart@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2023 JumpStart Company. All rights reserved</p>
+        </div>
+
+    </footer>
+
+    <script src="script/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+        })
+
+    </script>
 </body>
-
 </html>
