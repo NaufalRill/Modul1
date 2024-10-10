@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Form Pendaftaran</h1>
+        <form name="myForm" onsubmit="return validateForm()" method="post" action="test.html">
+
+                <p>Nama</p>
+                <input type="text" name="name">
+                <p>Email</p>
+                <input type="text" name="email">
+                <p>Alamat</p>
+                <textarea id="txtArea" name="alamat"></textarea><br/>
+                <input type="submit" value="Daftar">
+
+        </form>
+    </div>
+    
+</body>
+<script>
+    function validateForm() {
+        let name = document.forms["myForm"]["name"].value;
+        let email = document.forms["myForm"]["email"].value;
+        let alamat = document.forms["myForm"]["alamat"].value;
+        
+        // Periksa apakah kedua field kosong
+        if (name === "" && email === "" && alamat === "") {
+            alert("Semua data harus diisi.");
+            return false;
+        }
+        
+        // Periksa apakah hanya nama yang kosong
+        if (name === "") {
+            alert("Nama harus diisi.");
+            return false;
+        }
+        
+        // Periksa apakah hanya email yang kosong
+        if (email === "") {
+            alert("Email harus diisi.");
+            return false;
+        }
+
+        if (alamat === "") {
+            alert("Alamat harus diisi.");
+            return false;
+        }
+    }
+</script>
+</html>

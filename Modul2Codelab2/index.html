@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Penjumlahan</title>
+        <link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+        <div class="container">
+            <form id="myForm" onsubmit="jumlah(event)">
+                <h1>Penjumlahan</h1>
+                <p>Nilai Pertama</p>
+                <input type="text" name="nilai" id="nilai1"><br/>
+                <p>Nilai Kedua</p>
+                <input type="text" name="nilai" id="nilai2"><br/>
+                <input type="submit" value="Hitung">
+                <input type="button" value="Reset" onclick="resetForm()">
+
+                <p>Hasil: <span id="hasil"></span></p>
+            </form>
+        </div>
+ 
+		<script>
+		function jumlah(event){
+            // Mencegah halaman refresh saat submit
+            event.preventDefault();
+
+            // Mengambil nilai input
+            var satu = document.getElementById('nilai1').value;
+            var dua = document.getElementById('nilai2').value;
+
+            // Konversi string ke integer dan menjumlahkannya
+            var total = parseInt(satu) + parseInt(dua);
+
+            // Menampilkan hasil ke elemen dengan id 'hasil'
+            document.getElementById('hasil').innerHTML = total;
+        }
+
+        function resetForm() {
+            // Menghapus nilai input
+            document.getElementById('nilai1').value = '';
+            document.getElementById('nilai2').value = '';
+            
+            // Mengosongkan hasil
+            document.getElementById('hasil').innerHTML = '';
+        }
+
+		</script>
+	</body>
+</html>

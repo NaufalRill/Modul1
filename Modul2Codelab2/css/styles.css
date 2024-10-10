@@ -1,0 +1,25 @@
+.container {
+    margin: auto;
+    margin-top: 220px;
+    text-align: center;
+    width: 50%;
+    border: 0.5px solid black;
+    padding: 10px;
+}
+
+input[type=text] {
+    width: 56%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+input[type=button], input[type=submit]{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
