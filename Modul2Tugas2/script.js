@@ -2,14 +2,23 @@ const todoInput = document.getElementById("todo-input");
 const addButton = document.getElementById("add-button");
 const todoList = document.getElementById("todo-list");
 
+document.addEventListener("DOMContentLoaded", loadTodos);
 addButton.addEventListener("click", addTodo);
 
 function addTodo() {
     const todoText = todoInput.value.trim();
 
-    if (todoText === "") return; 
+    if (todoText === "") return;
 
+    const listItem = createListItem(todoText);
 
+    todoList.appendChild(listItem);
+
+    saveTodos();
+    todoInput.value = "";
+}
+
+function createListItem(todoText) {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
         <span>${todoText}</span>
@@ -25,9 +34,7 @@ function addTodo() {
     const deleteButton = listItem.querySelector(".delete-btn");
     deleteButton.addEventListener("click", () => deleteTodo(listItem));
 
-    todoList.appendChild(listItem);
-
-    todoInput.value = "";
+    return listItem;
 }
 
 function editTodo(listItem) {
@@ -36,9 +43,31 @@ function editTodo(listItem) {
 
     if (newText && newText.trim() !== "") {
         span.textContent = newText.trim();
+        saveTodos();
     }
 }
 
 function deleteTodo(listItem) {
-    listItem.remove(); 
+    listItem.remove();
+    saveTodos();
+}
+
+function saveTodos() {
+    const todos = [];
+    todoList.querySelectorAll("li").forEach((item) => {
+        const text = item.querySelector("span").textContent;
+        todos.push(text);
+    });
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function loadTodos() {
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+
+    if (storedTodos) {
+        storedTodos.forEach((todoText) => {
+            const listItem = createListItem(todoText);
+            todoList.appendChild(listItem);
+        });
+    }
 }

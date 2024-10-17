@@ -1,4 +1,4 @@
-const display = document.querySelector(".display");  // Ensure this selects the correct element
+const display = document.querySelector(".display"); 
 const buttons = document.querySelectorAll("button");
 const specialChars = ["%", "*", "/", "-", "+", "="];
 let output = "";
@@ -6,25 +6,25 @@ let output = "";
 const calculate = (btnValue) => {
     if (btnValue === "=" && output != "") {
         try {
-            // Safely evaluate the expression
-            output = eval(output.replace("%", "/100"));
+
+            output = eval(output);
         } catch (error) {
-            output = "Error";  // If there's an issue with eval (e.g., malformed input)
+            output = "Error";  
         }
     } else if (btnValue === "AC") {
-        output = "";  // Clear the display
+        output = "";  
     } else if (btnValue === "DEL") {
-        output = output.toString().slice(0, -1);  // Remove last character
+        output = output.toString().slice(0, -1); 
     } else if (btnValue === "²") {
-        // Square the current output number
+
         output = (Math.pow(parseFloat(output), 2)).toString();
     } else {
-        // Avoid starting with an operator if output is empty
+
         if (output === "" && specialChars.includes(btnValue)) return;
-        output += btnValue;  // Append button value to the output string
+        output += btnValue; 
     }
 
-    display.value = output;  // Update the display value
+    display.value = output; 
 };
 
 buttons.forEach((button) => {
